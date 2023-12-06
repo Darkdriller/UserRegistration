@@ -8,7 +8,9 @@ public class UserRegistration {
     }
 
     public boolean isValidEmail(String email) {
-        return email.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}");
+        return email.matches("[a-zA-Z0-9]+([.][a-zA-Z0-9]+)*([_+%-][a-zA-Z0-9]+)*@[a-zA-Z0-9-]+\\.[a-zA-Z]{2,}(\\.[a-zA-Z]{2,})?"
+
+        );
     }
 
     public boolean isValidMobile(String mobile) {

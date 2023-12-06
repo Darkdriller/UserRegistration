@@ -28,12 +28,33 @@ public class UserRegistrationTest {
     // Test cases for Email
     @Test
     public void testValidEmail() {
-        Assert.assertTrue(userReg.isValidEmail("example@domain.com"));
+        Assert.assertTrue(userReg.isValidEmail("abc@yahoo.com"));
+        Assert.assertTrue(userReg.isValidEmail("abc-100@yahoo.com"));
+        Assert.assertTrue(userReg.isValidEmail("abc.100@yahoo.com"));
+        Assert.assertTrue(userReg.isValidEmail("abc111@abc.com"));
+        Assert.assertTrue(userReg.isValidEmail("abc-100@abc.net"));
+        Assert.assertTrue(userReg.isValidEmail("abc.100@abc.com.au"));
+        Assert.assertTrue(userReg.isValidEmail("abc@gmail.com.com"));
+        Assert.assertTrue(userReg.isValidEmail("abc+100@gmail.com"));
     }
 
     @Test
     public void testInvalidEmail() {
-        Assert.assertFalse(userReg.isValidEmail("example.com"));
+        Assert.assertFalse(userReg.isValidEmail("abc"));
+        Assert.assertFalse(userReg.isValidEmail("abc@.com.my"));
+        Assert.assertFalse(userReg.isValidEmail("abc123@gmail.a"));
+        Assert.assertFalse(userReg.isValidEmail("abc123@.com"));
+        Assert.assertFalse(userReg.isValidEmail("abc123@.com.com"));
+        Assert.assertFalse(userReg.isValidEmail(".abc@abc.com"));
+        Assert.assertFalse(userReg.isValidEmail("abc()*@gmail.com"));
+        Assert.assertFalse(userReg.isValidEmail("abc@%*.com"));
+        Assert.assertFalse(userReg.isValidEmail("abc..2002@gmail.com"));
+        Assert.assertFalse(userReg.isValidEmail("abc.@gmail.com"));
+        Assert.assertFalse(userReg.isValidEmail("abc@abc@gmail.com"));
+        Assert.assertFalse(userReg.isValidEmail("abc@gmail.com.1a"));
+        Assert.assertFalse(userReg.isValidEmail("abc@gmail.com.aa.au"));
+
+
     }
 
     // Test cases for Mobile
